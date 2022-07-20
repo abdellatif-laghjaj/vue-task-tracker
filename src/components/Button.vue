@@ -9,11 +9,11 @@ export default {
   name: "Button",
   props: {
     text: String,
-    color: String
+    color: String,
   },
   methods: {
     onClick() {
-      this.$emit('toggle-add-task')
+      this.$emit('btn-click')
     }
   }
 }
