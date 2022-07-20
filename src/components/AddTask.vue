@@ -40,7 +40,7 @@ export default {
         return;
       }
       const newTask = {
-        id: crypto.randomUUID(),
+        // id: crypto.randomUUID(),
         title: this.text,
         day: this.day,
         reminder: this.reminder

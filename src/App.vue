@@ -43,8 +43,17 @@ export default {
         }
       });
     },
-    addTask(task) {
-      this.tasks.unshift(task);
+    async addTask(task) {
+
+      const response = await fetch('/api/tasks', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(task)
+      });
+
+      this.tasks.push(task);
       // this.tasks = [...this.tasks, task];
     },
     toggleAddTask() {
