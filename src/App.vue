@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Task Tracker"/>
-    <Tasks :tasks="tasks"/>
+    <Tasks :tasks="tasks" @delete-task="deleteTask"/>
   </div>
 </template>
 
@@ -9,6 +9,7 @@
 
 import Header from "@/components/Header";
 import Tasks from "@/components/Tasks";
+import tasks from "@/components/Tasks";
 
 export default {
   name: 'App',
@@ -19,6 +20,14 @@ export default {
   data() {
     return {
       tasks: [],
+    }
+  },
+  methods: {
+    deleteTask(id) {
+      const task_title = this.tasks.find(task => task.id === id).title;
+      if (confirm(`Are you sure you want to delete "${task_title}" ?`)) {
+        this.tasks.splice(this.tasks.findIndex(task => task.id === id), 1);
+      }
     }
   },
   created() {
