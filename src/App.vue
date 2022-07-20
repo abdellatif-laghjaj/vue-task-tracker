@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <Header title="Task Tracker"/>
+    <AddTask @add-task="addTask"/>
     <Tasks :tasks="tasks" @delete-task="deleteTask" @toggle-reminder="toggleReminder"/>
   </div>
 </template>
@@ -8,12 +9,14 @@
 <script>
 
 import Header from "@/components/Header";
+import AddTask from "@/components/AddTask";
 import Tasks from "@/components/Tasks";
 
 export default {
   name: 'App',
   components: {
     Header,
+    AddTask,
     Tasks
   },
   data() {
@@ -36,6 +39,9 @@ export default {
           task.reminder = !task.reminder;
         }
       });
+    },
+    addTask(task) {
+      this.tasks.unshift(task);
     }
   },
   created() {
