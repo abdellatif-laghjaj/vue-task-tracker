@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <Button content="Add"/>
+    <Button @click="addTask" text="Add" color="#3AB4F2"/>
   </header>
 </template>
 
@@ -19,6 +19,11 @@ export default {
   },
   components: {
     Button
+  },
+  methods: {
+    addTask() {
+      alert("Add Task")
+    }
   }
 }
 </script>
