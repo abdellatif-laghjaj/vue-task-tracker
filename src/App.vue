@@ -49,17 +49,18 @@ export default {
     },
     toggleAddTask() {
       this.showAddTask = !this.showAddTask;
-    }
+    },
+    async fetchTasks() {
+      const res = await fetch('api/tasks');
+      return res.json();
+    },
+    async fetchTask(id) {
+      const res = await fetch(`api/tasks/${id}`);
+      return res.json();
+    },
   },
-  created() {
-    this.tasks = [
-      {
-        id: 1,
-        title: "Task 1",
-        day: "March 1st at 10:00 AM",
-        reminder: true,
-      },
-    ]
+  async created() {
+    this.tasks = await this.fetchTasks();
   }
 }
 </script>
