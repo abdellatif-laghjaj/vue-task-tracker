@@ -28,10 +28,18 @@ export default {
     }
   },
   methods: {
-    deleteTask(id) {
+    async deleteTask(id) {
       const task_title = this.tasks.find(task => task.id === id).title;
       if (confirm(`Are you sure you want to delete "${task_title}" ?`)) {
-        this.tasks.splice(this.tasks.findIndex(task => task.id === id), 1);
+        const res = await fetch(`/api/tasks/${id}`, {
+          method: 'DELETE'
+        });
+
+        if (res.ok) {
+          this.tasks = this.tasks.filter(task => task.id !== id);
+        } else {
+          alert('Error deleting task!');
+        }
       }
     },
     toggleReminder(id) {
