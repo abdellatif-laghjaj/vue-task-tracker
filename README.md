@@ -1,4 +1,4 @@
-# vue_task_tracker
+# Task Tracker made with Vue Js
 
 ## Project setup
 ```
