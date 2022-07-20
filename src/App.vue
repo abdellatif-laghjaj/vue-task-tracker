@@ -42,6 +42,7 @@ export default {
     },
     addTask(task) {
       this.tasks.unshift(task);
+      // this.tasks = [...this.tasks, task];
     }
   },
   created() {
