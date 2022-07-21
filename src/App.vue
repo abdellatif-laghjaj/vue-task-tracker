@@ -5,6 +5,8 @@
             :showAddTask="showAddTask"/>
     <AddTask @add-task="addTask" v-show="showAddTask"/>
     <Tasks :tasks="tasks" @delete-task="deleteTask" @toggle-reminder="toggleReminder"/>
+    <router-view></router-view>
+    <Footer/>
   </div>
 </template>
 
@@ -13,13 +15,15 @@
 import Header from "@/components/Header";
 import AddTask from "@/components/AddTask";
 import Tasks from "@/components/Tasks";
+import Footer from "@/components/Footer";
 
 export default {
   name: 'App',
   components: {
     Header,
     AddTask,
-    Tasks
+    Tasks,
+    Footer
   },
   data() {
     return {
