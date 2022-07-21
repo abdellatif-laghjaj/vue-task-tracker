@@ -1,12 +1,12 @@
 <template>
-  <button :style="{backgroundColor: color}"
-          class="btn" @click="onClick">{{ text }}
+  <button @click="onClick()" :style="{ background: color }" class="btn">
+    {{ text }}
   </button>
 </template>
 
 <script>
 export default {
-  name: "Button",
+  name: 'Button',
   props: {
     text: String,
     color: String,
@@ -14,11 +14,7 @@ export default {
   methods: {
     onClick() {
       this.$emit('btn-click')
-    }
-  }
+    },
+  },
 }
 </script>
-
-<style scoped>
-
-</style>

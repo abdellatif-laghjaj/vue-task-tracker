@@ -1,24 +1,35 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <Button :text="showAddTask ? 'Close' : 'Add'"
-            :color="showAddTask ? '#FF0063' : '#3AB4F2'"
-            @btn-click="$emit('toggle-add-task')"/>
+    <Button
+      v-show="homePage"
+      @btn-click="$emit('toggle-add-task')"
+      :text="showAddTask ? 'Close' : 'Add Task'"
+      :color="showAddTask ? 'red' : 'green'"
+    />
   </header>
 </template>
 
 <script>
-
-import Button from "@/components/Button";
+import Button from './Button'
 
 export default {
-  name: "Header",
+  name: 'Header',
   props: {
     title: String,
-    showAddTask: Boolean
+    showAddTask: Boolean,
   },
   components: {
-    Button
+    Button,
+  },
+  computed: {
+    homePage() {
+      if (this.$route.path === '/') {
+        return true
+      } else {
+        return false
+      }
+    },
   },
 }
 </script>

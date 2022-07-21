@@ -1,28 +1,22 @@
 {
   "tasks": [
     {
-      "title": "Voluptatibus iusto c",
-      "day": "27",
-      "reminder": true,
-      "id": 1
+      "id": "1",
+      "text": "Doctors Appointment",
+      "day": "March 5th at 2:30pm",
+      "reminder": true
     },
     {
-      "title": "Ut rerum amet quia ",
-      "day": "11",
-      "reminder": true,
-      "id": 2
+      "id": "2",
+      "text": "Meeting with boss",
+      "day": "March 6th at 1:30pm",
+      "reminder": true
     },
     {
-      "title": "Fugit voluptatum pa",
-      "day": "5",
-      "reminder": true,
-      "id": 3
-    },
-    {
-      "title": "Laboris doloremque d",
-      "day": "13",
-      "reminder": true,
-      "id": 4
+      "id": "3",
+      "text": "Food shopping",
+      "day": "March 7th at 2:00pm",
+      "reminder": false
     }
   ]
 }

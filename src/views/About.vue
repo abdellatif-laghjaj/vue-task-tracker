@@ -1,32 +1,11 @@
 <template>
-  <div class="app">
-    <header>
-      <h1>
-        <router-link to="/">
-          Todo List
-        </router-link>
-      </h1>
-    </header>
-    <main>
-      <router-view></router-view>
-    </main>
-    <footer>
-      <p>
-        2020 © All rights reserved.
-      </p>
-      <router-link to="/about">
-        About
-      </router-link>
-    </footer>
-  </div>
+  <h3>Version 1.0.0</h3>
+  <router-link to="/">Go Back</router-link>
 </template>
 
 <script>
 export default {
-  name: "About"
-}
+  name: 'About',
+  inheritAttrs: false, // disable 'non-props' warning
+};
 </script>
-
-<style scoped>
-
-</style>

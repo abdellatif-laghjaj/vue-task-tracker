@@ -1,25 +1,17 @@
 <template>
   <footer>
-    <p>
-      2020 © All rights reserved.
-    </p>
+    <p>Copyright &copy; 2021</p>
+    <router-link to="/about">About</router-link>
   </footer>
 </template>
 
-<script>
-export default {
-  name: "Footer"
-}
-</script>
-
 <style scoped>
 a {
-  color: #EF5B0C;
-  text-decoration: none;
+  color: #333;
 }
 
 footer {
+  margin-top: 30px;
   text-align: center;
-  margin-top: 20px;
 }
 </style>
